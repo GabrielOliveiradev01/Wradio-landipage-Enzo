@@ -1,9 +1,10 @@
 # Configuração para deploy do app Next.js (monorepo Turborepo)
-# App Next.js em apps/web — monorepo com pnpm
+# App Next.js em apps/web — apps/api é a API Hono (não deployar na Netlify)
 
 [build]
   base = "."
   command = "pnpm build"
+  publish = "apps/web/.next"
 
 [build.environment]
   NODE_VERSION = "22"
@@ -13,7 +14,5 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-# OBRIGATÓRIO na Netlify UI > Site settings > Build & deploy > Build settings:
-# 1. Clique em "Edit settings" ou "Configure"
-# 2. Package directory: apps/web
-# 3. Base directory: (deixar vazio)
+# ⚠️ CRÍTICO na Netlify UI > Build & deploy > Build settings:
+# Package directory DEVE ser: apps/web (não apps/api!)
