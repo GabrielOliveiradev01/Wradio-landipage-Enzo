@@ -1,0 +1,19 @@
+# Configuração para deploy do app Next.js (monorepo Turborepo)
+# App Next.js em apps/web — monorepo com pnpm
+
+[build]
+  base = "."
+  command = "pnpm build"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NPM_FLAGS = "--legacy-peer-deps"
+
+# Plugin Next.js (OpenNext) — necessário para SSR e rotas funcionarem
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# OBRIGATÓRIO na Netlify UI > Site settings > Build & deploy > Build settings:
+# 1. Clique em "Edit settings" ou "Configure"
+# 2. Package directory: apps/web
+# 3. Base directory: (deixar vazio)
