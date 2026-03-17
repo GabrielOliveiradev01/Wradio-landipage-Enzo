@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OG Image Template - Wradio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        /* Container com proporção exata do Open Graph: 1200x630 */
+        .og-container {
+            width: 1200px;
+            height: 630px;
+            background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Elementos decorativos */
+        .og-container::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+        }
+
+        .og-container::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            bottom: -80px;
+            left: -80px;
+        }
+
+        .og-content {
+            z-index: 2;
+            text-align: center;
+            color: white;
+        }
+
+        .og-logo {
+            font-size: 120px;
+            font-weight: 900;
+            margin-bottom: 30px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .og-title {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .og-description {
+            font-size: 32px;
+            font-weight: 400;
+            opacity: 0.95;
+            max-width: 900px;
+            line-height: 1.4;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .og-badge {
+            position: absolute;
+            bottom: 40px;
+            right: 60px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 24px;
+            font-weight: 600;
+            color: white;
+        }
+
+        /* Instruções */
+        .instructions {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            font-family: monospace;
+            background: #f3f4f6;
+            border-radius: 8px;
+        }
+
+        .instructions h2 {
+            margin-bottom: 15px;
+            color: #1f2937;
+        }
+
+        .instructions ol {
+            margin-left: 20px;
+        }
+
+        .instructions li {
+            margin: 10px 0;
+            color: #4b5563;
+        }
+
+        .instructions code {
+            background: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: #f97316;
+        }
+    </style>
+</head>
+<body>
+    <div class="og-container" id="og-image">
+        <div class="og-content">
+            <div class="og-logo">Wradio</div>
+            <h1 class="og-title">Laudos Radiológicos Inteligentes</h1>
+            <p class="og-description">
+                Transforme seu fluxo de trabalho médico com tecnologia de ponta
+            </p>
+        </div>
+        <div class="og-badge">IA + Radiologia</div>
+    </div>
+
+    <div class="instructions">
+        <h2>📸 Como Gerar a Imagem Open Graph (1200x630px)</h2>
+        <ol>
+            <li>Abra este arquivo HTML no navegador</li>
+            <li>Personalize o texto acima conforme necessário</li>
+            <li>Use uma das opções abaixo para capturar:</li>
+        </ol>
+
+        <h3>Opção 1: Screenshot Manual (Mais Simples)</h3>
+        <ol>
+            <li>Dê zoom no navegador para 100%</li>
+            <li>Tire um screenshot da área colorida acima</li>
+            <li>Recorte para exatamente 1200x630px usando:
+                <ul>
+                    <li>Preview (Mac): Ferramentas > Ajustar Tamanho</li>
+                    <li>Paint (Windows): Redimensionar</li>
+                    <li>Ferramentas online: https://www.iloveimg.com/resize-image</li>
+                </ul>
+            </li>
+            <li>Salve como <code>og-image.png</code> na pasta <code>/public</code></li>
+        </ol>
+
+        <h3>Opção 2: Screenshot com DevTools (Mais Preciso)</h3>
+        <ol>
+            <li>Abra Chrome DevTools (F12)</li>
+            <li>Pressione Cmd+Shift+P (Mac) ou Ctrl+Shift+P (Windows)</li>
+            <li>Digite "Capture node screenshot"</li>
+            <li>Clique no container laranja acima</li>
+            <li>Renomeie para <code>og-image.png</code> e mova para <code>/public</code></li>
+        </ol>
+
+        <h3>Opção 3: Usar Ferramenta de Design</h3>
+        <ol>
+            <li><strong>Canva</strong>: Use template "Open Graph" (1200x630)</li>
+            <li><strong>Figma</strong>: Crie frame 1200x630px</li>
+            <li><strong>Photoshop</strong>: Novo documento 1200x630px</li>
+        </ol>
+
+        <h3>Dicas de Design:</h3>
+        <ul>
+            <li>✅ Mantenha texto legível (mínimo 40px)</li>
+            <li>✅ Use cores da marca (laranja: #f97316)</li>
+            <li>✅ Deixe margem de 50px em todos os lados</li>
+            <li>✅ Teste em diferentes fundos (claro/escuro)</li>
+            <li>✅ Inclua logo/nome do produto</li>
+        </ul>
+
+        <h3>Validar Imagem:</h3>
+        <ul>
+            <li>Tamanho: exatamente 1200x630 pixels</li>
+            <li>Formato: PNG ou JPG</li>
+            <li>Peso: &lt; 1MB (idealmente &lt; 300KB)</li>
+            <li>Testar em: <code>https://www.opengraph.xyz/</code></li>
+        </ul>
+    </div>
+
+    <script>
+        // Adiciona funcionalidade para download direto (opcional)
+        console.log('%c📸 OG Image Template Ready!', 'color: #f97316; font-size: 20px; font-weight: bold;');
+        console.log('Siga as instruções acima para gerar sua imagem Open Graph');
+    </script>
+</body>
+</html>
