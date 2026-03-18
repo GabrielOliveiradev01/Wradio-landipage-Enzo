@@ -1,18 +1,16 @@
-# Configuração para deploy do app Next.js (monorepo Turborepo)
-# App Next.js em apps/web — apps/api é a API Hono (não deployar na Netlify)
+# Configuração deploy Next.js (monorepo Turborepo)
+# O app web está em apps/web — apps/api é a API (não usar na Netlify!)
 
 [build]
   base = "."
   command = "pnpm build"
-  publish = "apps/web"
+  publish = "apps/web/.next"
 
 [build.environment]
   NODE_VERSION = "22"
   NPM_FLAGS = "--legacy-peer-deps"
 
-# Plugin Next.js (OpenNext) — necessário para SSR e rotas funcionarem
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-# ⚠️ CRÍTICO na Netlify UI > Build & deploy > Build settings:
-# Package directory DEVE ser: apps/web (não apps/api!)
+# ⚠️ Package directory DEVE ser apps/web na Netlify UI! Ver NETLIFY-SETUP.md
